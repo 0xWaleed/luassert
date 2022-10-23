@@ -218,9 +218,11 @@ local function fmt_matcher(arg)
     [false] = "no.",
   }
   local args = {}
+  --[[
   for idx = 1, arg.arguments.n do
     table.insert(args, assert:format({ arg.arguments[idx], n = 1, })[1])
   end
+  --]]
   return string.format("(matcher) %s%s(%s)",
                        not_inverted[arg.mod],
                        tostring(arg.name),
