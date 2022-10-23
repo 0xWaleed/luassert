@@ -58,6 +58,8 @@ local state_mt = {
 local match = {
   _ = setmetatable({mod=true, callback=function() return true end}, matcher_mt),
 
+  any = setmetatable({mod=true, callback=function() return true end, name = 'any'}, matcher_mt),
+
   state = function() return setmetatable({mod=true, tokens={}}, state_mt) end,
 
   is_matcher = function(object)
